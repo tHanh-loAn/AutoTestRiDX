@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class WebApp {
+
     WebDriver driver;
 
     public static ThreadLocal<WebApp> tlWebApp = new ThreadLocal<>();
@@ -39,7 +40,8 @@ public class WebApp {
     public WebDriver getDriver() {
         System.out.println("====================================");
         if (driver == null) {
-            System.out.println("Starting Chrome");
+            System.out.println("Starting Firefox");
+            System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+ "/web-driver/gecko/geckodriver.exe");
 //            WebDriverManager.chromedriver().clearDriverCache();
 //            WebDriverManager.chromedriver().setup();
 //            ChromeOptions chromeOptions = new ChromeOptions();

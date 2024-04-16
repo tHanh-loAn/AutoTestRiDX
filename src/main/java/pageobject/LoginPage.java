@@ -6,12 +6,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class LoginPage extends WebApp {
-
+    WebDriver driver;
     WebApp app = WebApp.getWebApp();
     private static final By LIST_ARTICLE_IN_A_PAGE = By.xpath("//div[@id = 'content']/article");
 
@@ -24,6 +26,7 @@ public class LoginPage extends WebApp {
     private static final By BAO_MAT_NHAP_MON_IN_CHUYEN_CODING = By.xpath("//li[@id='menu-item-3739']");
     private static final By USER_NAME_INPUT = By.xpath("//*[@id='email']");
     private static final By PASSWORD_INPUT = By.xpath("//*[@id='password']");
+    private static final By LOGIN_BUTTON = By.xpath("//button[@type='button']");
 
     public void iOpenLoginPage() {
         // System.out.println("I open Home Page");
@@ -62,6 +65,8 @@ public class LoginPage extends WebApp {
     public void inputUserNameAndPass(String userName, String password) {
         app.input(USER_NAME_INPUT, userName);
         app.input(PASSWORD_INPUT, password);
+        app.click(LOGIN_BUTTON);
+//        app.fluentWaitForElement();
     }
 
 }
