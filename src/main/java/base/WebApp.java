@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -39,15 +40,20 @@ public class WebApp {
         System.out.println("====================================");
         if (driver == null) {
             System.out.println("Starting Chrome");
-            WebDriverManager.chromedriver().clearDriverCache();
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--allow-running-insecure-content");
-            chromeOptions.addArguments("--ignore-certificate-errors");
-            chromeOptions.addArguments("--disable-web-security");
-            chromeOptions.addArguments("disable-infobars");
-            chromeOptions.addArguments("window-size=800,600");
-            driver = new ChromeDriver(chromeOptions);
+//            WebDriverManager.chromedriver().clearDriverCache();
+//            WebDriverManager.chromedriver().setup();
+//            ChromeOptions chromeOptions = new ChromeOptions();
+//            chromeOptions.addArguments("--allow-running-insecure-content");
+//            chromeOptions.addArguments("--ignore-certificate-errors");
+//            chromeOptions.addArguments("--disable-web-security");
+//            chromeOptions.addArguments("disable-infobars");
+//            chromeOptions.addArguments("window-size=800,600");
+//            driver = new ChromeDriver(chromeOptions);
+//            driver = new ChromeDriver();
+
+            WebDriverManager.firefoxdriver().clearDriverCache();
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
         }
         return driver;
     }
@@ -56,6 +62,16 @@ public class WebApp {
         try {
             System.out.println("Clicking on " + locator.toString());
             fluentWaitForElement(locator).click();
+        } catch (Exception exception) {
+            throw exception;
+        }
+    }
+
+    public void input(By locator, String data) {
+        try {
+            System.out.println("Input " + locator.toString());
+            fluentWaitForElement(locator).click();
+            fluentWaitForElement(locator).sendKeys(data);
         } catch (Exception exception) {
             throw exception;
         }

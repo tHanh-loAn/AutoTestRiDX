@@ -5,7 +5,7 @@ import base.WebApp;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
-public class CodeDaoHook {
+public class RiDXHook {
     @Before
     public void init(){
         System.out.println("Before");

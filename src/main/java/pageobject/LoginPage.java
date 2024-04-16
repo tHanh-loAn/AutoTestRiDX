@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginPage {
+public class LoginPage extends WebApp {
 
     WebApp app = WebApp.getWebApp();
     private static final By LIST_ARTICLE_IN_A_PAGE = By.xpath("//div[@id = 'content']/article");
@@ -22,10 +22,12 @@ public class LoginPage {
 
     private static final By CHUYEN_CODING_IN_MENU_BAR = By.xpath("//li[@id='menu-item-12']");
     private static final By BAO_MAT_NHAP_MON_IN_CHUYEN_CODING = By.xpath("//li[@id='menu-item-3739']");
+    private static final By USER_NAME_INPUT = By.xpath("//*[@id='email']");
+    private static final By PASSWORD_INPUT = By.xpath("//*[@id='password']");
 
-    public void iOpenHomePage() {
+    public void iOpenLoginPage() {
         // System.out.println("I open Home Page");
-        app.getDriver().get("https://toidicodedao.com/");
+        app.getDriver().get("http://118.71.173.96:3000/user/login");
     }
 
     public String[] iSeePostTenLastMostRecent() {
@@ -55,6 +57,11 @@ public class LoginPage {
             app.getDriver().switchTo().window(winHandle);
         }
         // System.out.println(app.getDriver().getCurrentUrl());
+    }
+
+    public void inputUserNameAndPass(String userName, String password) {
+        app.input(USER_NAME_INPUT, userName);
+        app.input(PASSWORD_INPUT, password);
     }
 
 }
