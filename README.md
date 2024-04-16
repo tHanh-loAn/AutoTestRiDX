@@ -2,8 +2,8 @@
 2. Nghiệp vụ web: về lỗ hỏng bảo mật
 3. Tình hình hiện tại: Web đang lỗi nên chưa xài được
 Tạm thời viết testcase và testscript cho chức năng login/logout
-4. Web: http://118.71.173.96:8999/
-TK Admin: admin@ridx.com / 12345678
+4. Web: http://118.71.173.96:3000/
+TK Admin: admin@gmail.com / 12345678
 TK User: user@gmail.com / 12345678
 --> quyền đăng nhập 2 tk là khác nhau
 
