@@ -1,5 +1,5 @@
 1. Nội dung đồ án: Test web --> thành công --> Jenkins cho phép deploy
-2. Nghiệp vụ web: về lỗ hỏng bảo mật (web của cô giáo cho --> vừa cùi vừa khó dùng)
+2. Nghiệp vụ web: về lỗ hỏng bảo mật
 3. Tình hình hiện tại: Web đang lỗi nên chưa xài được
 Tạm thời viết testcase và testscript cho chức năng login/logout
 4. Web: http://118.71.173.96:8999/
