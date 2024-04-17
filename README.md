@@ -1,8 +1,8 @@
 1. Nội dung đồ án: Test web --> thành công --> Jenkins cho phép deploy
 2. Nghiệp vụ web: về lỗ hỏng bảo mật
-3. Tình hình hiện tại: Web đang lỗi nên chưa xài được
+3. Tình hình hiện tại: Web đang lỗi nên chưa xài được // đã fix
 Tạm thời viết testcase và testscript cho chức năng login/logout
-4. Web: http://118.71.173.96:3000/
+4. Web: http://ridx.id.vn
 TK Admin: admin@gmail.com / 12345678
 TK User: user@gmail.com / 12345678
 --> quyền đăng nhập 2 tk là khác nhau
